@@ -8,6 +8,7 @@
   gap: 20px;
 }
 
+
 #filters_tags {
   display: flex;
   gap: 20px;
@@ -135,10 +136,10 @@
 }
 
 .filter_list{
-  display: none; 
-  grid-auto-flow: column; 
-  grid-template-rows: repeat(10, 1fr); 
-  gap: 10px 40px; 
+  display: none;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(10, 1fr);
+  gap: 10px 40px;
   position: absolute;
   height: 397px;
   width: 667px;
@@ -179,8 +180,8 @@
 .filter_li:hover {
   font-weight: bolder;
   width: 155px;
-  overflow: visible; 
-  white-space: normal;  
+  overflow: visible;
+  white-space: normal;
 }
 
 .selected {
