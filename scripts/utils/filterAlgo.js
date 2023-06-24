@@ -19,7 +19,7 @@ export function filterRecipes(value, recipes) {
 	)
 
 	sortRecipes(filteredRecipes)
-
+    console.log(filteredRecipes)
 	return filteredRecipes
 }
 
