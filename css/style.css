@@ -37,16 +37,16 @@ body {
 }
 @media screen and (max-width: 850px) {
   #recipes {
-    grid-template-columns:62.5%; 
-    justify-content: center; 
+    grid-template-columns:62.5%;
+    justify-content: center;
   }
 }
 
 /* Tablette */
 @media screen and (min-width: 426px) and (max-width: 768px) {
   #recipes {
-    grid-template-columns: 1fr; 
-    justify-content: center; 
+    grid-template-columns: 1fr;
+    justify-content: center;
   }
   #filters_buttons {
     flex-direction: column;
