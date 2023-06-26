@@ -197,7 +197,8 @@ searchBar.addEventListener('input', (e) => {
 
 		// si déjà recherche par tag, reset
 		if (tagList.length != 0) {
-			tagSectionReset()
+			// tagSectionReset()
+            filterByTag(filteredRecipes, tagList)
 		}
 
 		// si aucune recette trouvée, message erreur
@@ -212,6 +213,24 @@ searchBar.addEventListener('input', (e) => {
 		pageReset()
 		cross.style.display = 'none'
 	}
+})
+
+//gere si aucun tag n'est actif
+document.addEventListener('click', (e) => {
+    if (tagList.length == 0) {
+        //Get Input Value
+        console.log('search bar Value', searchBarValue)
+        if (searchBarValue != undefined) {
+            if (searchBarValue.length >= 3 ) {
+                // filtre les recettes avec la value de l'input
+                filteredRecipes = filterRecipes(searchBarValue, recipes)
+                recipesLength.textContent = filteredRecipes.length
+                displayRecipes(filteredRecipes)
+                listInit(filteredRecipes)
+                displayFilterList(lists, searchBarValue)
+            }
+        }
+    }
 })
 
 // gestion du reset de la barre de recherche
