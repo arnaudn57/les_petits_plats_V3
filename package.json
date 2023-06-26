@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/NathLouss/LesPetitsPlats-OC.git"
+    "url": "git+https://github.com/arnaudn57/les_petits_plats_V3"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/NathLouss/LesPetitsPlats-OC/issues"
+    "url": "https://github.com/arnaudn57/les_petits_plats_V3/issues"
   },
-  "homepage": "https://github.com/NathLouss/LesPetitsPlats-OC#readme",
+  "homepage": "https://github.com/arnaudn57/les_petits_plats_V3#readme",
   "devDependencies": {
     "eslint": "^8.28.0",
     "prettier": "2.7.1"
