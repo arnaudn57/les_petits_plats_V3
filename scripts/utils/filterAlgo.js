@@ -1,19 +1,21 @@
-import { format } from '../utils/formatElement.js'
+import {
+    format
+} from '../utils/formatElement.js'
 
 // déclaration variable
 let filteredRecipes = []
 
 export function sortRecipes(filterRecipes, key) {
-	for (let i = 0; i < filterRecipes.length; i++) {
-		const currentKey = filterRecipes[i][key]
-		const currentRecipe = filterRecipes[i]
-		let j = i - 1
-		while (j >= 0 && filterRecipes[j][key] > currentKey) {
-			filterRecipes[j + 1] = filterRecipes[j]
-			j--
-		}
-		filterRecipes[j + 1] = currentRecipe
-	}
+    for (let i = 0; i < filterRecipes.length; i++) {
+        const currentKey = filterRecipes[i][key]
+        const currentRecipe = filterRecipes[i]
+        let j = i - 1
+        while (j >= 0 && filterRecipes[j][key] > currentKey) {
+            filterRecipes[j + 1] = filterRecipes[j]
+            j--
+        }
+        filterRecipes[j + 1] = currentRecipe
+    }
 }
 
 // export function filterRecipes(value, recipes) {
@@ -120,37 +122,37 @@ export function sortRecipes(filterRecipes, key) {
 // }
 
 export function filterRecipes(value, recipes) {
-  const inputFormated = format(value);
+    const inputFormated = format(value);
 
-  const filteredRecipes = [];
-  for (let i = 0; i < recipes.length; i++) {
-    const recipe = recipes[i];
-    if (
-      format(recipe.name).includes(inputFormated) ||
-      format(recipe.description).includes(inputFormated) ||
-      formatIngredients(recipe.ingredients).includes(inputFormated) ||
-      format(recipe.appliance).includes(inputFormated) ||
-      format(recipe.ustensils.toString()).includes(inputFormated)
-    ) {
-      filteredRecipes.push(recipe);
+    const filteredRecipes = [];
+    for (let i = 0; i < recipes.length; i++) {
+        const recipe = recipes[i];
+        if (
+            format(recipe.name).includes(inputFormated) ||
+            format(recipe.description).includes(inputFormated) ||
+            formatIngredients(recipe.ingredients).includes(inputFormated) ||
+            format(recipe.appliance).includes(inputFormated) ||
+            format(recipe.ustensils.toString()).includes(inputFormated)
+        ) {
+            filteredRecipes.push(recipe);
+        }
     }
-  }
 
-  console.log(filteredRecipes);
-  sortRecipes(filteredRecipes, `name`)
-  return filteredRecipes;
+    console.log(filteredRecipes);
+    sortRecipes(filteredRecipes, `name`)
+    return filteredRecipes;
 }
 
 
 
 function formatIngredients(ingredients) {
-  let formattedIngredients = '';
-  for (let i = 0; i < ingredients.length; i++) {
-    const ingredient = ingredients[i].ingredient;
-    formattedIngredients += format(ingredient);
-    if (i < ingredients.length - 1) {
-      formattedIngredients += ', ';
+    let formattedIngredients = '';
+    for (let i = 0; i < ingredients.length; i++) {
+        const ingredient = ingredients[i].ingredient;
+        formattedIngredients += format(ingredient);
+        if (i < ingredients.length - 1) {
+            formattedIngredients += ', ';
+        }
     }
-  }
-  return formattedIngredients;
+    return formattedIngredients;
 }
